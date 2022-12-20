@@ -123,7 +123,7 @@ class RawFile:
 
             #  Writing raw file
             if use_individual_interval:  # Acc_Z interval 기준
-                if not self.individual(raw_file):
+                if not self.individual_interval(raw_file):
                     continue
             else:  # 50mm interval 기준
                 if self.csv_index == 1:
