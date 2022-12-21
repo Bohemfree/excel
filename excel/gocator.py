@@ -21,7 +21,7 @@ from file import rawfile
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 
-def acc_interval(anal_path: str, acc_intervals: list, use_indiviual_interval: bool = False):
+def acc_interval(anal_path: str, acc_intervals: list, use_individual_interval: bool = False):
     """Acceleration_Z(g)의 interval을 기준으로 laser 데이터 값 정리하여 raw 파일로 저장하는 함수
     Args:
         anal_path: 조사경로(e.g: D:/dataset/조사1), .krs 파일 경로의 상위 경로
@@ -65,7 +65,7 @@ def acc_interval(anal_path: str, acc_intervals: list, use_indiviual_interval: bo
 
         rawfile_class = rawfile.RawFile(
             file_path=rawfile_path, csv_df=csv_df, imu_df=imu_df, interval=acc_intervals[gocator_index])
-        rawfile_class.write_rawfile(use_indiviual_interval)
+        rawfile_class.write_rawfile(use_individual_interval)
 
 
 if __name__ == "__main__":
