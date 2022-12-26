@@ -83,10 +83,10 @@ class RawFile:
         if (self.csv_index * 5 >= self.max_csv_df) or ((self.imu_index * self.interval) >= self.max_imu_df):
             return False
 
-        ex_diff = abs(self.find_diff() - 1)
+        ex_diff = abs(self.find_diff())
         if self.imu_index != len(self.imu_df.values):
             self.imu_index += 1
-        current_diff = abs(self.find_diff() - 1)
+        current_diff = abs(self.find_diff())
 
         if ex_diff <= current_diff:
             imu_index = self.imu_index - 1
